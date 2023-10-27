@@ -11,15 +11,15 @@
 
 //add expense to the expenses array
     addExpenses: function(){
-      if (inputExpense) {
-      this.expenses.push(inputExpense)
+      if (inputExpense()) {
+      this.expenses.push(inputExpense) //fill method or push method??
    }
 }, 
 
 //add income to the income array
     addIncome: function(){
       if (inputIncome) {
-      this.income.push(inputIncome)
+      this.income.push(inputIncome) //fill method or push method??
    }
 },
 
@@ -34,25 +34,22 @@
     }
  }
 
-function inputExpense () {
-   parseFloat(prompt("How much was your expense?"));
-}
-function inputIncome () {
-   parseFloat(prompt("How much was your income?"));
-}
+ 
+/* The menu() function should display the menu with different choices for the user
+depending on what the user selects from the menu you should call on the correct
+method or poperty from the account object. */
 
 // DECLARING THE MENU //
-function menu () {
+function menu() {
    const choose = parseFloat(prompt(`Please choose an option:
    1) Add income, 2) Add expense, 3) List all expenses, 4) See balance`));
 
    switch (choose) {
       case 1:
-         inputIncome();
-         for (account.expenses = 0; account.expenses < this.account.expenses.length )
+         account.income.push(prompt("How much was your income?"));
          break;
       case 2:
-         inputExpense ();
+         account.expenses.push(prompt("How much was your expense?"));
          break;
       case 3: 
          listAllExpenses();
@@ -66,6 +63,9 @@ function menu () {
          alert(`Sorry, only numbers 1 to 4 are valid`);
    }
 }
+
 // CALLING THE MENU //
 
-menu ();
+menu();
+console.log(account.income);
+console.log(account.expenses);

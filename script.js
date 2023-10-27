@@ -7,9 +7,7 @@ create a function called menu()
 the function menu() should only be responsible to show the different choices
 for the user.
 
-The menu() function should display the menu with different choices for the user
-depending on what the user selects from the menu you should call on the correct
-method or poperty from the account object. You can use a switch or if/else statement for your
+ You can use a switch or if/else statement for your
 different menu choices. Please motivate you choice in a comment.
  */
 
