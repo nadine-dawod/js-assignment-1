@@ -1,26 +1,24 @@
-// create an account object
 
-// the object should hold all of our logic
 
-// THE ACCOUNT OBJECT SHOULD HAVE THE FOLLWOING PROPERTIES:
-// name: the account holders name, should be a string
-// expenses: an array that should hold all of your expenses, can be empty from start
-// income: an array that should hold all of your income, can be empty from start
-// addExpenses: a function that vill add an expense to the expenses array
-// addIncome: a function that vill add an income to the income array
-// listAllExpenses: a function that should list all the expenses in the expenses array
-// getSummary: a function that should summarize your total balances. It should show your total
-// income, your total expenses and also calculate your current balances (income - expenses).
 
-// create a function called menu()
+/* 
+create a function called menu()
 
-// the function menu() should only be responsible to show the different choices
-// for the user.
+the function menu() should only be responsible to show the different choices
+for the user.
 
-// The menu() function should display the menu with different choices for the user
-// depending on what the user selects from the menu you should call on the correct
-// method or poperty from the account object. You can use a switch or if/else statement for your
-// different menu choices. Please motivate you choice in a comment.
+The menu() function should display the menu with different choices for the user
+depending on what the user selects from the menu you should call on the correct
+method or poperty from the account object. You can use a switch or if/else statement for your
+different menu choices. Please motivate you choice in a comment.
+ */
+
+
+/* REMEMBER TO HANDLE POTENTIAL ERRORS - A USER SHOULD NOT BE ABLE TO ADD AN EMPTY 
+INUT OR SOMETHING THAT IS NOT VALID */
+
+
+
 
 // CODE TO HELP YOU GET STARTED
 
@@ -36,8 +34,7 @@
 const amount = parseFloat(prompt("How much was your expense?"));
 // the answer that the user will put in the input box will get stored in the variable amount.
 
-// HINT: you will need to use array methods in this assignment and there is one very basic one
-// that is important. It is the method for adding something to an existing array, which one is that?
+
 
 // In order to show all elements in an array we need to loop through it. In this assignment a
 // forEach loop would be good to use. If you want to display the outcome of each element in the
@@ -46,6 +43,9 @@ const amount = parseFloat(prompt("How much was your expense?"));
 // for example:
 alert("This is a message " + "\n" + "with a new line");
 // to your ouput. This will make the nes output on a new line.
+
+
+
 
 // to make the menu look nice we should not console.log any output. Instead we shoul use either alert()
 // or propmt()
