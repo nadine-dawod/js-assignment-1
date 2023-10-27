@@ -9,63 +9,64 @@
 //array that hold income
     income: [],
 
-//add expense to the expenses array
-    addExpenses: function(){
-      if (inputExpense()) {
-      this.expenses.push(inputExpense) //fill method or push method??
-   }
-}, 
-
 //add income to the income array
     addIncome: function(){
-      if (inputIncome) {
-      this.income.push(inputIncome) //fill method or push method??
-   }
-},
+      this.income.push(prompt(`How much was your income?`));
+   },
 
+//add expense to the expenses array
+    addExpenses: function(){
+      this.expenses.push(prompt(`How much was your expense?`));      
+   }, 
+
+// CHANGE //  
 //list all the expenses in the expenses array
     listAllExpenses: function (){
       for (let i = 0; i < this.expenses.length; i++);
-    },
-
+   },
+// CHANGE //  
 //summarize total balances
     getSummary: function() {
       const totalSum = this.income - this.expenses;
-    }
- }
+   }
+}
 
  
-/* The menu() function should display the menu with different choices for the user
-depending on what the user selects from the menu you should call on the correct
-method or poperty from the account object. */
+/* 
+HOW TO MAKE SO THAT THE MENU () RETURNS TO CHOOSE-PROMPT AFTER INPUT HAVE BEEN DONE IN 1 AND 2? 
+CONTINUE WORKING WITH FOR-LOOP ON LINE 42!!
+ */
 
 // DECLARING THE MENU //
 function menu() {
+
+   for (let i = 1; i <10;) { 
+
    const choose = parseFloat(prompt(`Please choose an option:
    1) Add income, 2) Add expense, 3) List all expenses, 4) See balance`));
 
    switch (choose) {
-      case 1:
-         account.income.push(prompt("How much was your income?"));
-         break;
-      case 2:
-         account.expenses.push(prompt("How much was your expense?"));
-         break;
-      case 3: 
-         listAllExpenses();
+      case 1: // calling function in object
+         account.addIncome();
+         return choose;
+      case 2: // calling function in object
+         account.addExpenses();
+      case 3: // CHANGE //  
          alert(`These are your expenses: ${expenses})`);
-         break;
-      case 4:
-         getSummary();
+      case 4: // CHANGE //  
          alert(`This is your balance: ${totalSum})`);
-         break;
       default:
          alert(`Sorry, only numbers 1 to 4 are valid`);
-   }
+}
+   break
+}
 }
 
 // CALLING THE MENU //
 
 menu();
+
+
 console.log(account.income);
 console.log(account.expenses);
+
