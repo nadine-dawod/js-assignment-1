@@ -1,72 +1,94 @@
-// OBJECT - ACCOUNT //
+// OBJECT //
 
- const account = {
-    name: "Nadine",
+const account = {
+   name: "Nadine",
 
 //array that hold expenses
-    expenses: [],
+   expenses: [3, 6, 8, 9],
 
 //array that hold income
-    income: [],
+   income: [500, 600],
 
 //add income to the income array
-    addIncome: function(){
-      this.income.push(prompt(`How much was your income?`));
+   addIncome: function(){
+      this.income.push(parseFloat(prompt(`${this.name}, how much was your income?`)));
    },
 
 //add expense to the expenses array
-    addExpenses: function(){
-      this.expenses.push(prompt(`How much was your expense?`));      
+   addExpenses: function(){
+      this.expenses.push(parseFloat(prompt(`${this.name}, what was your expense?`)));
+      this.expenses.push(parseFloat(prompt(`${this.name}, how much was your expense?`)));      
    }, 
-
-// CHANGE //  
+ 
 //list all the expenses in the expenses array
-    listAllExpenses: function (){
-      for (let i = 0; i < this.expenses.length; i++);
-   },
-// CHANGE //  
-//summarize total balances
-    getSummary: function() {
-      const totalSum = this.income - this.expenses;
+   listAllExpenses: function (){
+      alert(`${this.name}, these are your expenses: 
+      ${this.expenses.join(" \n\ ")}`)
+   }, //how to make the first nr not indented in the alert-box???
+
+
+
+//summarize total balances // DOESNT WORK
+
+getTotal: function () {
+   let sumIncome = this.income.values(); //summarize income-array 
+   let sumExpenses = this.expenses.values(); //summarize expenses-arraY
+
+   const totalSum = sumIncome - sumExpenses; 
+   return sumIncome, sumExpenses, totalSum;  
+ }, 
+   
+   getSummary: function() {
+      alert(`${this.name}, 
+      your total income is ${this.sumIncome},
+      your total expenses are ${this.sumExpenses},
+      this makes your balance ${this.totalSum}`);
    }
+
 }
 
- 
-/* 
-HOW TO MAKE SO THAT THE MENU () RETURNS TO CHOOSE-PROMPT AFTER INPUT HAVE BEEN DONE IN 1 AND 2? 
-CONTINUE WORKING WITH FOR-LOOP ON LINE 42!!
- */
 
-// DECLARING THE MENU //
+
+
+// DECLARING THE MENU // HOW TO MAKE THE MENU GO BACK TO LANDING-PAGE???
 function menu() {
-
-   for (let i = 1; i <10;) { 
 
    const choose = parseFloat(prompt(`Please choose an option:
    1) Add income, 2) Add expense, 3) List all expenses, 4) See balance`));
+   
+      switch (choose) {
+            case 1: // calling function in object
+            account.addIncome();
+            // I WANT TO GO BACK TO CHOOSE - HOW????
 
-   switch (choose) {
-      case 1: // calling function in object
-         account.addIncome();
-         return choose;
-      case 2: // calling function in object
-         account.addExpenses();
-      case 3: // CHANGE //  
-         alert(`These are your expenses: ${expenses})`);
-      case 4: // CHANGE //  
-         alert(`This is your balance: ${totalSum})`);
-      default:
-         alert(`Sorry, only numbers 1 to 4 are valid`);
+            case 2: // calling function in object
+            account.addExpenses();
+            // I WANT TO GO BACK TO CHOOSE - HOW????
+
+            case 3: // calling function in object
+            account.listAllExpenses();
+            // I WANT TO GO BACK TO CHOOSE - HOW????
+
+            case 4: // calling function in object
+            account.getSummary();
+            // I WANT TO GO BACK TO CHOOSE - HOW????
+
+            default:
+            alert(`Sorry, only numbers 1 to 4 are valid`);
+
+      break
+   }  
 }
-   break
-}
-}
 
-// CALLING THE MENU //
-
-menu();
+// CALLING THE MENU SO THAT IT IS ACTUALLY DISPLAYED IN BROWSER
+//menu();
 
 
-console.log(account.income);
-console.log(account.expenses);
 
+
+
+/* Motivate why choosing a switch statement rather than if:
+Switch just felt cleaner honestly and made more sense to use when
+there where multiple options. Also I wanted to try out different
+things and if..else feels like a statemnt I will propblably use in
+other parts of the project */
