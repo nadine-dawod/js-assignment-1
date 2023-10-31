@@ -4,53 +4,59 @@ const account = {
    name: "Nadine",
 
 //array that hold expenses
-   expenses: [3, 6, 8, 9],
+   expenses: ["food", 600, "gas", 956],
 
 //array that hold income
-   income: [500, 600],
+   income: [8000, 2000],
 
 //add income to the income array
    addIncome: function(){
-      this.income.push(parseFloat(prompt(`${this.name}, how much was your income?`)));
+      this.income.push(parseFloat(prompt(`${this.name}, how much was your income?
+      Please enter an amount.`)));
    },
 
 //add expense to the expenses array
    addExpenses: function(){
-      this.expenses.push(parseFloat(prompt(`${this.name}, what was your expense?`)));
-      this.expenses.push(parseFloat(prompt(`${this.name}, how much was your expense?`)));      
+      this.expenses.push(parseFloat(prompt(`${this.name}, what was your expense? 
+      For example rent, food, etc`)));
+      this.expenses.push(parseFloat(prompt(`${this.name}, how much was your expense?
+      Please enter an amount.`)));      
    }, 
  
 //list all the expenses in the expenses array
    listAllExpenses: function (){
-      alert(`${this.name}, these are your expenses: 
-      ${this.expenses.join(" \n\ ")}`)
-   }, //how to make the first nr not indented in the alert-box???
-
+      alert(`${this.name}, these are your expenses:
+ ${this.expenses.join(" \n ")}`)
+   },
 
 
 //summarize total balances // DOESNT WORK
-
-getTotal: function () {
-   let sumIncome = this.income.values(); //summarize income-array 
-   let sumExpenses = this.expenses.values(); //summarize expenses-arraY
-
-   const totalSum = sumIncome - sumExpenses; 
-   return sumIncome, sumExpenses, totalSum;  
- }, 
    
    getSummary: function() {
       alert(`${this.name}, 
-      your total income is ${this.sumIncome},
-      your total expenses are ${this.sumExpenses},
-      this makes your balance ${this.totalSum}`);
+      your total income is ,
+      your total expenses are ${sumExpenses},
+      this makes your balance .`);
    }
-
 }
 
+// TRY-OUT AREA // 
+
+for(let i = 0; i < account.expenses.length; i++) {
+let sumExpenses = account.expenses[i].filter(checkNumber)
+
+function checkNumber (num) {
+   return typeof Number}
+
+console.log(sumExpenses);   
 
 
 
-// DECLARING THE MENU // HOW TO MAKE THE MENU GO BACK TO LANDING-PAGE???
+
+
+// DECLARING THE MENU 
+// HOW TO MAKE THE MENU GO BACK TO LANDING-PAGE???
+
 function menu() {
 
    const choose = parseFloat(prompt(`Please choose an option:
@@ -60,6 +66,7 @@ function menu() {
             case 1: // calling function in object
             account.addIncome();
             // I WANT TO GO BACK TO CHOOSE - HOW????
+            return 
 
             case 2: // calling function in object
             account.addExpenses();
@@ -69,19 +76,18 @@ function menu() {
             account.listAllExpenses();
             // I WANT TO GO BACK TO CHOOSE - HOW????
 
-            case 4: // calling function in object
-            account.getSummary();
+/*             case 4: // calling function in object
+            account.getSummary(); */
             // I WANT TO GO BACK TO CHOOSE - HOW????
 
             default:
             alert(`Sorry, only numbers 1 to 4 are valid`);
-
-      break
    }  
 }
 
-// CALLING THE MENU SO THAT IT IS ACTUALLY DISPLAYED IN BROWSER
+// CALLING THE MENU (SO THAT IT IS ACTUALLY DISPLAYED IN BROWSER)
 //menu();
+
 
 
 
