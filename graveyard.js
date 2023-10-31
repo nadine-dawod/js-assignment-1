@@ -77,4 +77,53 @@ function totalExpenses() {
 }
 console.log(sumExpenses)
 
+
+
+
+let sumExpenses = account.expenses.filter(checkNumber)}
+
+function checkNumber (num) {
+   return typeof Number}
+
+
+
+
+
+function totalExpenses (){
+   for(let i = 0; i < account.expenses.length; i++) {
+      if (typeof account.expenses[i] === "string") 
+      continue;}
+}
+
+console.log(`${account.expenses.forEach(totalExpenses)}`);
+let sumExpenses = account.expenses.filter(totalExpenses); 
+
+
+
+
+function totalExpenses(sum) {
+   for (let i = 0; i < account.expenses.lenght; i++); 
+   return sum = typeof account.expenses[i] === "string";
+}
+
+
+
+
+function totalExpenses(sum) {
+   for (let i = 0; i < account.expenses.lenght; i++); 
+   return sum = typeof account.expenses[i] === "string";
+}
+
+
+
+
+const sumExpenses = account.expenses.filter(totalExpenses);
+function totalExpenses (){
+   for(let i = 0; i < account.expenses.length; i++) {
+      if (typeof account.expenses[i] === "string") 
+      continue};
+}
+console.log(sumExpenses);
+
+
    */

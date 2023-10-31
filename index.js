@@ -6,7 +6,7 @@ const account = {
 //array that hold expenses
    expenses: ["food", 600, "gas", 956],
 
-//array that hold income
+//array that hold income//
    income: [8000, 2000],
 
 //add income to the income array
@@ -42,13 +42,7 @@ const account = {
 
 // TRY-OUT AREA // 
 
-for(let i = 0; i < account.expenses.length; i++) {
-let sumExpenses = account.expenses[i].filter(checkNumber)
 
-function checkNumber (num) {
-   return typeof Number}
-
-console.log(sumExpenses);   
 
 
 
@@ -87,10 +81,6 @@ function menu() {
 
 // CALLING THE MENU (SO THAT IT IS ACTUALLY DISPLAYED IN BROWSER)
 //menu();
-
-
-
-
 
 
 /* Motivate why choosing a switch statement rather than if:
