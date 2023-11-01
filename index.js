@@ -67,35 +67,39 @@ function sumExpenses() {
 function menu() {
 
    const choose = parseFloat(prompt(`Please choose an option:
-   1) Add income, 
-   2) Add expense, 
-   3) List all expenses, 
-   4) See balance, 
-   5) Exit program.`));
+   1) Add income
+   2) Add expense 
+   3) List all expenses 
+   4) See balance 
+   5) Exit program`));
    
       switch (choose) {
-            case 1: // calling function in object
+
+         case 1: // calling function in object
             account.addIncome();
             menu();
 
-            case 2: // calling function in object
+         case 2: // calling function in object
             account.addExpenses();
             menu();
             
-            case 3: // calling function in object
+         case 3: // calling function in object
             account.listAllExpenses();
             menu();
 
-            case 4: // calling function in object
+         case 4: // calling function in object
             account.getSummary();
             menu();
-
-            case 5: // exit program
+         
+         case 5: // exit program
             break;
 
-            default:
+         default:
             alert(`Sorry, only numbers 1 to 4 are valid`);
             menu();
+
+
+
    }  
 }
 
