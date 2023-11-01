@@ -1,4 +1,5 @@
 /* 
+
    let sumExpenses = account.expenses.reduce((number1, number2) => {
       return number1 + number2;
    })
@@ -126,4 +127,38 @@ function totalExpenses (){
 console.log(sumExpenses);
 
 
-   */
+
+for(let sumIncome = 0; i < account.income.lenght; i++){
+   sumIncome += account.income[i];  
+}
+console.log(`${i}`);
+console.log(sumIncome);
+   
+
+const sumExpenses = account.expenses.filter(checkNumber);
+
+function checkNumber() {
+   for(let i = 0; i < account.expenses.length; i++)
+   if (i === Number){
+      return
+   } 
+}
+console.log(sumExpenses);
+
+
+
+function checkNumber() {
+   for(let i = 0; i < account.expenses.length; i++)
+   if (i == typeof "number"){
+   return 
+} 
+}
+
+console.log(sumExpenses);
+
+
+ let sumIncome = account.income.reduce((number1, number2) => {
+   return number1 + number2;
+})
+
+*/

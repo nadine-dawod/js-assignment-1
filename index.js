@@ -4,23 +4,24 @@ const account = {
    name: "Nadine",
 
 //array that hold expenses
-   expenses: ["food", 600, "gas", 956],
+   expenses: [],
 
 //array that hold income//
-   income: [8000, 2000],
+   income: [],
 
 //add income to the income array
    addIncome: function(){
-      this.income.push(parseFloat(prompt(`${this.name}, how much was your income?
+     this.income.push(parseFloat(prompt(`${this.name}, how much was your income?
       Please enter an amount.`)));
+      return;
    },
 
 //add expense to the expenses array
    addExpenses: function(){
-      this.expenses.push(parseFloat(prompt(`${this.name}, what was your expense? 
-      For example rent, food, etc`)));
+      this.expenses.push(prompt(`${this.name}, what was your expense? 
+      For example rent, food, etc`));
       this.expenses.push(parseFloat(prompt(`${this.name}, how much was your expense?
-      Please enter an amount.`)));      
+      Please enter an amount.`)));
    }, 
  
 //list all the expenses in the expenses array
@@ -29,58 +30,78 @@ const account = {
  ${this.expenses.join(" \n ")}`)
    },
 
-
 //summarize total balances // DOESNT WORK
-   
    getSummary: function() {
       alert(`${this.name}, 
-      your total income is ,
-      your total expenses are ${sumExpenses},
-      this makes your balance .`);
+      your total income is ${sumIncome()} kronor,
+      your total expenses are ${sumExpenses()} kronor,
+      this makes your balance ${sumIncome() - sumExpenses()} kronor.`);
    }
 }
 
-// TRY-OUT AREA // 
+// SUMMARIZING INCOME ARRAY //
+
+function sumIncome() {
+   let totalIncome = 0;
+   for(let i = 0; i <account.income.length; i++) {
+      totalIncome = totalIncome + account.income[i];
+   }
+   return totalIncome;
+}
 
 
+// SUMMARIZING EXPENSE ARRAY //
+
+function sumExpenses() {
+   let totalExpenses = 0;
+   for(let i = 0; i <account.expenses.length; i++) {
+      if (typeof account.expenses[i] !== "string") { 
+      totalExpenses = totalExpenses + account.expenses[i];}
+   }
+   return totalExpenses;
+}
 
 
-
-
-
-// DECLARING THE MENU 
-// HOW TO MAKE THE MENU GO BACK TO LANDING-PAGE???
+// DECLARING THE MENU //
 
 function menu() {
 
    const choose = parseFloat(prompt(`Please choose an option:
-   1) Add income, 2) Add expense, 3) List all expenses, 4) See balance`));
+   1) Add income, 
+   2) Add expense, 
+   3) List all expenses, 
+   4) See balance, 
+   5) Exit program.`));
    
       switch (choose) {
             case 1: // calling function in object
             account.addIncome();
-            // I WANT TO GO BACK TO CHOOSE - HOW????
-            return 
+            menu();
 
             case 2: // calling function in object
             account.addExpenses();
-            // I WANT TO GO BACK TO CHOOSE - HOW????
-
+            menu();
+            
             case 3: // calling function in object
             account.listAllExpenses();
-            // I WANT TO GO BACK TO CHOOSE - HOW????
+            menu();
 
-/*             case 4: // calling function in object
-            account.getSummary(); */
-            // I WANT TO GO BACK TO CHOOSE - HOW????
+            case 4: // calling function in object
+            account.getSummary();
+            menu();
+
+            case 5: // exit program
+            break;
 
             default:
             alert(`Sorry, only numbers 1 to 4 are valid`);
+            menu();
    }  
 }
 
-// CALLING THE MENU (SO THAT IT IS ACTUALLY DISPLAYED IN BROWSER)
-//menu();
+// CALLING THE MENU - RUN THE PROGRAM //
+menu();
+
 
 
 /* Motivate why choosing a switch statement rather than if:
