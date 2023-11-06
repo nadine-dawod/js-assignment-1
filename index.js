@@ -6,7 +6,7 @@ const account = {
 //array that hold expenses
    expenses: [],
 
-//array that hold income//
+//array that hold income
    income: [],
 
 //add income to the income array
@@ -30,7 +30,7 @@ const account = {
  ${this.expenses.join(" \n ")}`)
    },
 
-//summarize total balances // DOESNT WORK
+//summarize total balances 
    getSummary: function() {
       alert(`${this.name}, 
       your total income is ${sumIncome()} kronor,
@@ -91,21 +91,23 @@ function menu() {
             account.getSummary();
             menu();
          
-         case 5: // exit program
-            break;
+         case 5: // exit program 
+            exit();
 
-         default:
-            alert(`Sorry, only numbers 1 to 4 are valid`);
+         default: // if input is other than 1-5
+            alert(`Sorry, only numbers 1 to 5 are valid`);
             menu();
-
-
-
    }  
 }
 
-// CALLING THE MENU - RUN THE PROGRAM //
+// CALLING THE MENU TO ACTUALLY RUN THE PROGRAM //
 menu();
 
+
+/* About exit():
+break; only got me out of the switch statement but not
+out of the actual function. After some googling I learned
+about exit() and it worked! */
 
 
 /* Motivate why choosing a switch statement rather than if:
